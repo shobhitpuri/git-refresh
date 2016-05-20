@@ -2,8 +2,9 @@
 This enables you to pull changes from a different remote branch to your local branch with just one command. 
 You can write your own custom git commands to do whatever repetitive actions you do multiple times a day. 
 For, me I usually update my local branch with the remote branch from which I branched off initially. 
-Doing this would usually take multiple commands like:
+Doing this would usually take multiple commands.
 
+Instead of:
 ```
 git stash
 git checkout remote_branch
@@ -12,13 +13,17 @@ git checkout current-branch
 git rebase remote-branch
 git stash apply
 ```
-
-Instead of these many commands it saves me some effort to just use one custom command that does all the above.
+you can just do:
+```
+git refresh remote_branch_name
+```
 
 ### Usage
 ```
 git refresh remote_branch_name
 ```
+`remote_branch_name` is the remote branch from which you want to pull changes. 
+
 ### Setup
 1. Put the `git-refresh` file anywhere on your system. Lets say you've put in the folder named `gitScripts`, so the folder path is `/Users/username/path/gitScripts/`
 2. Add the directory path to your environment `PATH`. For Linux/Mac, you can edit your `bash_profile` by doing `vim ~/.bash_profile`. Add following line in the file in the beginning:
