@@ -7,22 +7,22 @@ Doing this would usually take multiple commands.
 Instead of:
 ```
 git stash
-git checkout remote_branch
-git pull --rebase origin remote_branch
+git checkout remote-branch
+git pull --rebase origin remote-branch
 git checkout current-branch
 git rebase remote-branch
 git stash apply
 ```
 you can just do:
 ```
-git refresh remote_branch_name
+git refresh remote-branch-name
 ```
 
 ### Usage
 ```
-git refresh remote_branch_name
+git refresh remote-branch-name
 ```
-`remote_branch_name` is the remote branch from which you want to pull changes. 
+`remote-branch-name` is the remote branch from which you want to pull changes. 
 
 ### Setup
 1. Put the `git-refresh` file anywhere on your system. Lets say you've put in the folder named `gitScripts`, so the folder path is `/Users/username/path/gitScripts/`
