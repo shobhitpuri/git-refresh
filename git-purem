@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Find which is your current branch
+if currentBranch=$(git symbolic-ref --short -q HEAD)
+then
+  echo On branch $currentBranch
+  echo Pushing updates from the current branch to remote branch $currentBranch
+  
+  # Stash current changes
+  git stash
+  # Push the changes to remote branch with current name
+  git push origin $currentBranch
+  # Apply the stashed changes
+  git stash apply
+
+  echo Successfully pushed the updates to remote!
+else
+  echo ERROR: Cannot find the current branch!
+fi
