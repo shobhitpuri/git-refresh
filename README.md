@@ -71,5 +71,23 @@ Lets say you want to make a command `git awesome` which takes one parameter and 
    fi
    ```
 
+# git-purem
+
+git-purem, i.e (short of push remote) enables you to push your changes to remote origin to the same branch name as local. It also checks if the remote branch exists or not. If it exists, it updates your local branch with remote before pushesing the commits.
+
+Instead of:
+```
+git stash
+git pull --rebase origin current-branch
+git push origin current-branch
+git stash apply
+```
+you can just do:
+```
+git purem
+```
+
+
+
 
 <i>Credits and Inspiration</i> : [Extending Git: add a custom command](http://blog.santosvelasco.com/2012/06/14/extending-git-add-a-custom-command/)
