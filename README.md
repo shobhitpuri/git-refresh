@@ -1,4 +1,11 @@
-# git-refresh
+## Index
+
+1. [git-refresh](#git-refresh)
+2. [git-purem](#git-purem)
+3. [Setup](#setup)
+4. [Creating custom git commands](#writing-custom-git-commands)
+
+## git-refresh
 This enables you to pull changes from a different remote branch to your local branch with just one command. 
 You can write your own custom git commands to do whatever repetitive actions you do multiple times a day. 
 For, me I usually update my local branch with the remote branch from which I branched off initially. 
@@ -18,13 +25,37 @@ you can just do:
 git refresh remote-branch-name
 ```
 
-### Usage
+<b>Usage</b>
 ```
 git refresh remote-branch-name
 ```
 `remote-branch-name` is the remote branch from which you want to pull changes. 
 
-### Setup
+## git-purem
+
+git-purem, i.e (short form of git push remote) enables you to push your changes to remote origin to the same branch name as local. It also checks if the remote branch exists or not. If it exists, it updates your local branch with remote before pushesing the commits.
+
+Instead of:
+```
+git stash
+git pull --rebase origin current-branch
+git push origin current-branch
+git stash apply
+```
+you can just do:
+```
+git purem
+```
+
+<b>Usage</b>
+
+While you are on your current local branch you want to push, do:
+```
+git purem
+```
+
+## Setup
+
 1. Put the `git-refresh` file anywhere on your system. Lets say you've put in the folder named `gitScripts`, so the folder path is `/Users/username/path/gitScripts/`
 2. Add the directory path to your environment `PATH`. For Linux/Mac, you can edit your `bash_profile` by doing `vim ~/.bash_profile`. Add following line in the file in the beginning:
    
@@ -43,7 +74,7 @@ git refresh remote-branch-name
 3. That's it. You are done. You should be able run the command. 
 
 
-### Writing your own custom git command
+## Writing custom git commands
 
 Lets say you want to make a command `git awesome` which takes one parameter and then calls series of git commands. 
 
@@ -70,24 +101,5 @@ Lets say you want to make a command `git awesome` which takes one parameter and 
      echo ERROR: Cannot find the current branch!
    fi
    ```
-
-# git-purem
-
-git-purem, i.e (short of push remote) enables you to push your changes to remote origin to the same branch name as local. It also checks if the remote branch exists or not. If it exists, it updates your local branch with remote before pushesing the commits.
-
-Instead of:
-```
-git stash
-git pull --rebase origin current-branch
-git push origin current-branch
-git stash apply
-```
-you can just do:
-```
-git purem
-```
-
-
-
 
 <i>Credits and Inspiration</i> : [Extending Git: add a custom command](http://blog.santosvelasco.com/2012/06/14/extending-git-add-a-custom-command/)
