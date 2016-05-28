@@ -1,9 +1,9 @@
 ## Index
 
-1. [git-refresh](#git-refresh)
-2. [git-purem](#git-purem)
-3. [Setup](#setup)
-4. [Creating custom git commands](#writing-custom-git-commands)
+1. [git-refresh](#git-refresh) - Refresh current local branch with any remote branch easily. 
+2. [git-purem](#git-purem) - Push local branch changes to remote branch after updating from it.
+3. [Setup Cutom Commands](#setup) - Get started in 5 minutes max.
+4. [Creating Custom Git Commands](#writing-custom-git-commands) - Have your own ideas? Create custom scripts.
 
 ## git-refresh
 This enables you to pull changes from a different remote branch to your local branch with just one command. 
