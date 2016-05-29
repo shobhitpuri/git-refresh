@@ -56,7 +56,7 @@ git pushremote
 
 ## Setup
 
-1. Put the `git-refresh` file anywhere on your system. Lets say you've put in the folder named `gitScripts`, so the folder path is `/Users/username/path/gitScripts/`
+1. Put the `git-refresh` and `git-pushremote` files anywhere on your system in a folder. Lets say you've put in the folder named `gitScripts`, so the folder path is `/Users/username/path/gitScripts/`
 2. Add the directory path to your environment `PATH`. For Linux/Mac, you can edit your `bash_profile` by doing `vim ~/.bash_profile`. Add following line in the file in the beginning:
    
    ```
@@ -71,7 +71,7 @@ git pushremote
    ```
    source ~/.bash_profile
    ```
-3. That's it. You are done. You should be able run the command. 
+3. That's it. You are done. You should be able run the commands. 
 
 
 ## Writing custom git commands
