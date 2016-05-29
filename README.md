@@ -1,7 +1,7 @@
 ## Index
 
 1. [git-refresh](#git-refresh) - Refresh current local branch with any remote branch easily. 
-2. [git-purem](#git-purem) - Push local branch changes to remote branch after updating from it.
+2. [git-pushremote](#git-pushremote) - Push local branch changes to remote branch after updating from it.
 3. [Setup Cutom Commands](#setup) - Get started in 5 minutes max.
 4. [Creating Custom Git Commands](#writing-custom-git-commands) - Have your own ideas? Create custom scripts.
 
@@ -31,9 +31,9 @@ git refresh remote-branch-name
 ```
 `remote-branch-name` is the remote branch from which you want to pull changes. 
 
-## git-purem
+## git-pushremote
 
-git-purem, i.e (short form of git push remote) enables you to push your changes to remote origin to the same branch name as local. It also checks if the remote branch exists or not. If it exists, it updates your local branch with remote before pushesing the commits.
+git-pushremote enables you to push your changes to remote origin to the same branch name as local. It also checks if the remote branch exists or not. If it exists, it updates your local branch with remote before pushesing the commits.
 
 Instead of:
 ```
@@ -44,14 +44,14 @@ git stash apply
 ```
 you can just do:
 ```
-git purem
+git pushremote
 ```
 
 <b>Usage</b>
 
 While you are on your current local branch you want to push, do:
 ```
-git purem
+git pushremote
 ```
 
 ## Setup
