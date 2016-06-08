@@ -2,6 +2,7 @@
 
 1. [git-refresh](#git-refresh) - Refresh current local branch with any remote branch easily. 
 2. [git-pushremote](#git-pushremote) - Push local branch changes to remote branch after updating from it.
+3. [git-switch](#git-switch) - Switch branches easily. Takes care of stashing changes and creating a new branch if required.
 3. [Setup Cutom Commands](#setup) - Get started in 5 minutes max.
 4. [Creating Custom Git Commands](#writing-custom-git-commands) - Have your own ideas? Create custom scripts.
 
@@ -52,6 +53,28 @@ git pushremote
 While you are on your current local branch you want to push, do:
 ```
 git pushremote
+```
+
+## git-switch
+
+git-switch enables you to switch to a new or existing branch easliy. You don't need to worry about stashing changes or looking into if the branch already exist or not. It will create the branch if it does not exists, otherwise will just switch to the banch and apply the stashed changes.
+
+Instead of:
+```
+git stash
+git checkout old-branch (or git checkout -b new-branch)
+git stash apply
+```
+you can just do:
+```
+git switch checkout-branch-name
+```
+
+<b>Usage</b>
+
+Just provide the branch name to which you want to switch as follows:
+```
+git switch checkout-branch-name
 ```
 
 ## Setup
