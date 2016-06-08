@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Check if params are sufficient enough to go ahead.
+checkoutBranchParam=$1
+# If user didn't specify branch to checkout to, stop and show error.
+test -z $checkoutBranchParam && echo "ERROR: Please provide the destination branch to checkout to." 1>&2 && exit 1
+
+# Find which is your current branch
+if currentBranch=$(git symbolic-ref --short -q HEAD)
+then
+  echo On branch $currentBranch
+  echo "Stash changes."
+
+  # Stash current changes
+  git stash
+  
+  # If local branch exist or not.
+  if [ $(git branch --list $checkoutBranchParam + | wc -l) == "1" ]
+  then
+    echo "Branch name $checkoutBranchParam already exists. Switch to it."
+    git checkout $checkoutBranchParam
+  else 
+    echo "Branch name $checkoutBranchParam does not exists. Create the branch and switch."
+    git checkout -b $checkoutBranchParam
+  fi
+
+  # Apply the stashed changes
+  git stash apply
+
+  echo Successfully checked out the branch $checkoutBranchParam!
+else
+  echo ERROR: Cannot find the current branch!
+fi
