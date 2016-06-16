@@ -27,7 +27,7 @@ then
   then
     echo "No argument supplied. Continue executing the script normally."
     git push origin $currentBranch
-  elif [ $1 == "-f" ] || [ $1 == "-force" ]
+  elif [ $1 == "-f" ] || [ $1 == "--force" ]
   then
     echo "Force push requested."
     git push -f origin $currentBranch
