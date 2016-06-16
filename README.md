@@ -55,6 +55,11 @@ While you are on your current local branch you want to push, do:
 git pushremote
 ```
 
+If you want to force push just use
+```
+git pushremote -f
+```
+
 ## git-switch
 
 git-switch enables you to switch to a new or existing branch easliy. You don't need to worry about stashing changes or looking into if the branch already exist or not. It will create the branch if it does not exists, otherwise will just switch to the banch and apply the stashed changes.
