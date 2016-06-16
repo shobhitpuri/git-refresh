@@ -22,7 +22,20 @@ then
   fi
 
   # Push the changes to remote branch with current name
-  git push origin $currentBranch
+  # If specified a param, check if it was -f to force push.
+  if [ -z "$1" ]
+  then
+    echo "No argument supplied. Continue executing the script normally."
+    git push origin $currentBranch
+  elif [ $1 == "-f" ] || [ $1 == "--force" ]
+  then
+    echo "Force push requested."
+    git push -f origin $currentBranch
+  else
+    echo "ERROR: Not a valid argument. Exiting."
+    exit 1
+  fi
+
   # Apply the stashed changes
   git stash apply
 
